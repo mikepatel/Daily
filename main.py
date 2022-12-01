@@ -48,6 +48,7 @@ if __name__ == "__main__":
     # xpath = '/html/body/div[5]/div/main/div[2]/div/div/form[2]/div/file-attachment/secret-scanning-blob/div/div[2]/div/div/div[5]/div[1]/div/div/div/div[5]/div[2]/pre/span/span'
     # xpath = '/html/body/div[5]/div/main/div[2]/div/div[2]/form[2]/div/file-attachment/blob-editor/div[2]/div/div/div[5]/div[1]/div/div/div/div[5]/div[2]/pre/span'
     xpath = '/html/body/div[5]/div/main/turbo-frame/div/div/div[2]/form[2]/div/file-attachment/blob-editor/div[2]/div/div/div[5]/div[1]/div/div/div/div[5]/div[2]/pre/span/span'
+    xpath = '/html/body/div[1]/div[5]/div/main/turbo-frame/div/div/div[2]/form[2]/div/file-attachment/blob-editor/div[2]/div/div/div[5]/div[1]/div/div/div/div[5]/div[2]/pre/span/span'
     text = WebDriverWait(driver, 10).until(
         ec.presence_of_element_located((By.XPATH, xpath))
     )
