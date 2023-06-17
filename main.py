@@ -51,17 +51,16 @@ if __name__ == "__main__":
     signin = driver.find_element_by_name("commit")
     signin.send_keys(Keys.ENTER)
 
-    # edit readme
-    sleep(5)
-    xpath = '/html/body/div[1]/div[6]/div/main/turbo-frame/div/react-app/div/div/div[2]/div[1]/div/div/main/div[2]/div/div[3]/div[2]/div/div[2]/file-attachment/div[1]/div[5]/div[1]/div/div/div/div[5]/div[2]/pre/span'
+    # edit README
+    xpath = '/html/body/div[1]/div[6]/div/main/turbo-frame/div/react-app/div/div/div[2]/div[1]/div/div/main/div[2]/div/div[3]/div[2]/div/div[2]/file-attachment/div/div/div[2]/div[2]/div[2]/br'
+
     text = WebDriverWait(driver, 10).until(
         ec.presence_of_element_located((By.XPATH, xpath))
     )
-    
-    text.send_keys(Keys.BACK_SPACE)
+    text.send_keys(Keys.DELETE)
 
     # scroll down page
-    driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+    # driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 
     # commit button
     button_xpath = '/html/body/div[1]/div[6]/div/main/turbo-frame/div/react-app/div/div/div[2]/div[1]/div/div/main/div[2]/div/div[3]/div[1]/div[2]/button/span/span'
@@ -70,9 +69,6 @@ if __name__ == "__main__":
     # confirmation button
     button_xpath = '/html/body/div[1]/div[6]/div/main/turbo-frame/div/react-app/div/div/div[1]/div/div/div/div[3]/button[2]'
     click_button(driver, button_xpath)
-
-    # button = driver.find_element_by_id("submit-file")
-    # button.send_keys(Keys.ENTER)
 
     # close driver
     driver.close()
